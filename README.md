@@ -219,3 +219,30 @@ npm run lint
 
 ---
 *Developed for Karnataka State Police Decision Support & Intelligence Operations.*
+#   D a t a t h o n  
+ g i t  
+ i n i t  
+ g i t  
+ a d d  
+ .  
+ . m d  
+ g i t  
+ c o m m i t  
+ - m  
+ f i r s t   c o m m i t  
+ g i t  
+ b r a n c h  
+ - M  
+ m a i n  
+ g i t  
+ r e m o t e  
+ a d d  
+ o r i g i n  
+ h t t p s : / / g i t h u b . c o m / a r u l p e r i y a n n a g o u n d e r - c o l l a b / D a t a t h o n . g i t  
+ g i t  
+ p u s h  
+ - u  
+ o r i g i n  
+ m a i n  
+ #   D a t a t h o n  
+ 
