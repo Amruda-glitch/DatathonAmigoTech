@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSP Drishti AI - Implementation & Scope Specification Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Kannada:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0F172A;
+      --accent: #2563EB;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #1E293B;
+      --border: #E2E8F0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', 'Noto Sans Kannada', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+      color: white;
+      padding: 40px 60px;
+      border-bottom: 4px solid #3B82F6;
+    }
+    header h1 { font-size: 2.2rem; font-weight: 800; }
+    header p { font-size: 1.05rem; opacity: 0.9; margin-top: 8px; }
+    .badges { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+    .badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 24px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 1.45rem;
+      color: #0F172A;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; color: #1E3A8A; margin: 18px 0 10px 0; }
+    p, ul { margin-bottom: 12px; font-size: 0.96rem; }
+    ul { padding-left: 24px; }
+    li { margin-bottom: 6px; }
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background-color: #F1F5F9;
+      color: #0F172A;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+    th, td { padding: 10px 14px; border: 1px solid var(--border); text-align: left; }
+    th { background-color: #F1F5F9; font-weight: 600; }
+    .print-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+    @media print {
+      body { background: white; }
+      .container { max-width: 100%; margin: 0; padding: 0; }
+      .card { border: none; box-shadow: none; padding: 0; margin-bottom: 20px; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚓 KSP Drishti AI - Implementation & Scope Specification</h1>
+    <p>Detailed Report of Implemented Modules, Functional & Legal Scopes, Technology Stack, and File Mapping</p>
+    <div class="badges">
+      <span class="badge">React 19</span>
+      <span class="badge">Vite 8</span>
+      <span class="badge">Tailwind CSS v4</span>
+      <span class="badge">Leaflet GIS</span>
+      <span class="badge">Recharts</span>
+      <span class="badge">DPDP Act 2023 Compliant</span>
+    </div>
+  </header>
+
+  <button class="print-btn" onclick="window.print()">🖨️ Save as PDF / Print</button>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>1. Executive Summary</h2>
+      <p><strong>KSP Drishti AI</strong> (ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪೊಲೀಸ್ - ಕೆ.ಎಸ್.ಪಿ ದೃಷ್ಟಿ ಎಐ) is an enterprise decision support and intelligence web platform engineered for law enforcement agencies, crime analysts, police superintendents, and policymakers in Karnataka.</p>
+      <p>Integrated directly with <strong>ICJS 2.0 (Inter-operable Criminal Justice System)</strong> and <strong>MCCTNS (Modernized Crime and Criminal Tracking Network & Systems)</strong>, the platform indexes over <strong>1.42 Million FIR records (2018–2026)</strong> to deliver real-time RAG (Retrieval-Augmented Generation) query matching, criminal network visualization, spatial hotspot analytics, automated BNS section mapping, CCTV video analytics, and strict audit logging compliant with the <strong>DPDP (Digital Personal Data Protection) Act 2023</strong>.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. What Has Been Implemented</h2>
+      
+      <h3>🤖 AI Copilot & Conversational RAG (<code>src/components/CopilotModule.jsx</code>)</h3>
+      <ul>
+        <li>Natural Language Modus Operandi (MO) Search across 1.42M indexed FIRs.</li>
+        <li>Preset investigation query triggers (Indiranagar Pulsar Chain Snatching, Whitefield Cyber Fraud Syndicate, Mysuru Dasara Burglary Risk, Offender Profile Ramesh @ Bullet).</li>
+        <li>Automated legal section recommendation under <strong>Bharatiya Nyaya Sanhita (BNS)</strong> with confidence scores.</li>
+        <li>SQL query provenance display, FAISS/Cosine similarity metrics, and cryptographic CCTNS SHA-256 evidence hashes.</li>
+        <li>Actionable tactical lead generation (IMEI tower dump subpoenas, pawn shop checks, court bail verifications).</li>
+      </ul>
+
+      <h3>🎥 CCTV Smart Feed & ANPR Monitoring (<code>src/components/CCTVMonitoringModule.jsx</code>)</h3>
+      <ul>
+        <li>Multi-camera live stream monitoring across strategic intersections (MG Road, Silk Board, Kempegowda Bus Station, Outer Ring Road).</li>
+        <li>ANPR (Automatic Number Plate Recognition) & facial recognition alert tracking.</li>
+        <li>Bandwidth, uptime, active stream, and AI inference latency (14ms) analytics.</li>
+      </ul>
+
+      <h3>🕸️ Crime Network Knowledge Graph (<code>src/components/NetworkGraphModule.jsx</code>)</h3>
+      <ul>
+        <li>Interactive Neo4j graph visualizer displaying node links between habitual suspects, FIRs, vehicles, and financial mule bank accounts.</li>
+        <li>Dynamic node filtering with embedded risk metrics.</li>
+      </ul>
+
+      <h3>🗺️ GIS Map & Spatial Hotspot Analytics (<code>src/components/GISMapModule.jsx</code>)</h3>
+      <ul>
+        <li>Interactive Leaflet spatial mapping across police divisions (Indiranagar, Jayanagar, Whitefield, Mysuru, Hubballi).</li>
+        <li>Hotspot heatmaps, crime density scores, and festival surge risk forecasting.</li>
+      </ul>
+
+      <h3>👤 Offender Profiling & Dossiers (<code>src/components/OffenderProfileModule.jsx</code>)</h3>
+      <ul>
+        <li>Habitual offender intelligence dossiers tracking risk scores, MO history, gang associates, and active bail conditions at 1st ACMM Court.</li>
+      </ul>
+
+      <h3>📁 Investigator Workspace (<code>src/components/InvestigatorWorkspaceModule.jsx</code>)</h3>
+      <ul>
+        <li>Digital case binder management for organizing witness statements, physical evidence SHA-256 hashes, and exporting court briefs.</li>
+      </ul>
+
+      <h3>🔒 AI Governance & DPDP Audit (<code>src/components/AuditGovernanceModule.jsx</code>)</h3>
+      <ul>
+        <li>DPDP Act 2023 compliance dashboard logging query history, prompt hashes, role access levels, and PII anonymization statistics.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. Operational & Legal Scopes</h2>
+      
+      <h3>Role-Based Access Control (RBAC) Matrix</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Role ID</th>
+            <th>Title / Rank</th>
+            <th>Access Level</th>
+            <th>Permissions & Scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>INVESTIGATOR</code></td>
+            <td>Sub-Inspector / Inspector</td>
+            <td><strong>Level 1</strong></td>
+            <td>Local station FIR search, suspect interrogation notes, active case binder, PII masked</td>
+          </tr>
+          <tr>
+            <td><code>ANALYST</code></td>
+            <td>Crime Analyst</td>
+            <td><strong>Level 2</strong></td>
+            <td>Cross-station network graphs, MO pattern matching, trend analytics, PII masked</td>
+          </tr>
+          <tr>
+            <td><code>SUPERVISOR</code></td>
+            <td>Superintendent of Police (SP)</td>
+            <td><strong>Level 3</strong></td>
+            <td>District-wide GIS heatmaps, squad deployment, bail violation alerts, unmasked PII</td>
+          </tr>
+          <tr>
+            <td><code>POLICYMAKER</code></td>
+            <td>Joint Secretary (Home Dept)</td>
+            <td><strong>Level 4</strong></td>
+            <td>State-level crime metrics, policy recommendations, DPDP audit overview</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Data Protection & Legal Scope</h3>
+      <ul>
+        <li><strong>DPDP Act 2023 Compliance</strong>: Automatic masking of Personally Identifiable Information (PII) like Aadhaar numbers and exact residential addresses for Level 1 & Level 2 users.</li>
+        <li><strong>BNS Legal Mapping</strong>: Transitioned from IPC to <strong>Bharatiya Nyaya Sanhita (BNS)</strong> clauses.</li>
+        <li><strong>Cryptographic Hash Integrity</strong>: Immutable SHA-256 evidence logging.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>4. Technology Stack</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Technology</th>
+            <th>Version</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frontend Core</td>
+            <td>React</td>
+            <td><code>^19.2.7</code></td>
+            <td>UI component architecture</td>
+          </tr>
+          <tr>
+            <td>Build System</td>
+            <td>Vite</td>
+            <td><code>^8.1.1</code></td>
+            <td>Dev server & HMR compilation</td>
+          </tr>
+          <tr>
+            <td>Styling</td>
+            <td>Tailwind CSS</td>
+            <td><code>^4.3.3</code></td>
+            <td>Utility styling & modern UI layout</td>
+          </tr>
+          <tr>
+            <td>Mapping</td>
+            <td>Leaflet</td>
+            <td><code>^1.9.4</code></td>
+            <td>Geospatial crime mapping</td>
+          </tr>
+          <tr>
+            <td>Analytics Charts</td>
+            <td>Recharts</td>
+            <td><code>^3.10.0</code></td>
+            <td>Data visualization</td>
+          </tr>
+          <tr>
+            <td>Icons</td>
+            <td>Lucide React</td>
+            <td><code>^1.26.0</code></td>
+            <td>UI icons</td>
+          </tr>
+          <tr>
+            <td>Code Quality</td>
+            <td>Oxlint</td>
+            <td><code>^1.71.0</code></td>
+            <td>JavaScript & JSX linter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>5. Setup & Execution Guide</h2>
+      <pre><code># Install node modules
+npm install
+
+# Start Vite dev server
+npm run dev
+
+# Build production assets
+npm run build
+
+# RunOxLint static analysis
+npm run lint</code></pre>
+    </div>
+
+  </div>
+
+</body>
+</html>

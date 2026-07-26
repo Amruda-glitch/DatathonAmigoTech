@@ -1,0 +1,281 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+  <meta charset="utf-8">
+  <title>KSP Drishti AI - Complete Project Implementation & Scope Documentation</title>
+  <!--[if gte mso 9]>
+  <xml>
+    <w:WordDocument>
+      <w:View>Print</w:View>
+      <w:Zoom>100</w:Zoom>
+      <w:DoNotOptimizeForBrowser/>
+    </w:WordDocument>
+  </xml>
+  <![endif]-->
+  <style>
+    @page Section1 {
+      size: 8.5in 11.0in;
+      margin: 1.0in 1.0in 1.0in 1.0in;
+      mso-header-margin: 0.5in;
+      mso-footer-margin: 0.5in;
+      mso-paper-source: 0;
+    }
+    div.Section1 { page: Section1; }
+    body {
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #1E293B;
+    }
+    h1 {
+      font-size: 22pt;
+      color: #0F172A;
+      border-bottom: 2pt solid #2563EB;
+      padding-bottom: 6pt;
+      margin-top: 0;
+      margin-bottom: 8pt;
+    }
+    h2 {
+      font-size: 15pt;
+      color: #1E3A8A;
+      border-bottom: 1pt solid #CBD5E1;
+      padding-bottom: 4pt;
+      margin-top: 18pt;
+      margin-bottom: 8pt;
+    }
+    h3 {
+      font-size: 12pt;
+      color: #0F172A;
+      margin-top: 14pt;
+      margin-bottom: 4pt;
+    }
+    p { margin-bottom: 8pt; }
+    ul { margin-top: 4pt; margin-bottom: 8pt; padding-left: 20pt; }
+    li { margin-bottom: 4pt; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8pt;
+      margin-bottom: 12pt;
+    }
+    th, td {
+      border: 1pt solid #CBD5E1;
+      padding: 6pt 8pt;
+      text-align: left;
+      font-size: 10pt;
+    }
+    th {
+      background-color: #F1F5F9;
+      color: #0F172A;
+      font-weight: bold;
+    }
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      background-color: #F1F5F9;
+      color: #0F172A;
+      padding: 1pt 4pt;
+      font-size: 9.5pt;
+    }
+    .badge {
+      display: inline-block;
+      background-color: #DBEAFE;
+      color: #1E40AF;
+      padding: 2pt 6pt;
+      border-radius: 4pt;
+      font-size: 9pt;
+      font-weight: bold;
+      font-family: 'Consolas', monospace;
+    }
+    .header-box {
+      background-color: #0F172A;
+      color: #FFFFFF;
+      padding: 16pt 20pt;
+      margin-bottom: 16pt;
+      border-radius: 6pt;
+    }
+    .header-box h1 {
+      color: #FFFFFF;
+      border-bottom: 2pt solid #3B82F6;
+    }
+    .header-box p {
+      color: #E2E8F0;
+      font-size: 11pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="Section1">
+    
+    <div class="header-box">
+      <h1>🚓 KSP दृष्टि AI (KSP Drishti AI)</h1>
+      <p><strong>Comprehensive Project Implementation, Scope Specification & Technology Documentation</strong></p>
+      <p style="font-size: 9pt; color: #94A3B8;">Government of Karnataka | Home Department | Karnataka State Police Decision Support Platform</p>
+    </div>
+
+    <h2>1. Executive Overview</h2>
+    <p><strong>KSP Drishti AI</strong> (ಕರ್ನಾಟಕ ರಾಜ್ಯ ಪೊಲೀಸ್ - ಕೆ.ಎಸ್.ಪಿ ದೃಷ್ಟಿ ಎಐ) is an enterprise decision support and intelligence web platform engineered for law enforcement agencies, crime analysts, police superintendents, and policymakers across Karnataka State.</p>
+    <p>Integrated directly with <strong>ICJS 2.0 (Inter-operable Criminal Justice System)</strong> and <strong>MCCTNS (Modernized Crime and Criminal Tracking Network & Systems)</strong>, the platform indexes over <strong>1.42 Million FIR records (2018–2026)</strong> to deliver real-time RAG (Retrieval-Augmented Generation) query matching, criminal network visualization, spatial hotspot analytics, automated BNS section mapping, CCTV video analytics, and strict audit logging compliant with the <strong>DPDP (Digital Personal Data Protection) Act 2023</strong>.</p>
+
+    <h2>2. Implemented Features & Modules</h2>
+
+    <h3>🤖 2.1 AI Copilot & Conversational RAG (src/components/CopilotModule.jsx)</h3>
+    <ul>
+      <li><strong>Natural Language MO Search</strong>: Cross-references modus operandi, suspect descriptions, vehicle numbers, and location timelines across 1.42M FIRs.</li>
+      <li><strong>Preset Investigation Triggers</strong>: Pre-configured query buttons for instant analysis (Indiranagar Pulsar Chain Snatching, Whitefield Cyber Fraud Syndicate, Mysuru Dasara Burglary Risk, Offender Profile Ramesh @ Bullet).</li>
+      <li><strong>Bharatiya Nyaya Sanhita (BNS) Mapping</strong>: Recommends applicable legal sections with AI confidence percentages (BNS Sec 304 Snatching @ 99.88%, BNS Sec 310(2) Dacoity @ 94.10%, BNS Sec 317(3) Stolen Property @ 91.50%).</li>
+      <li><strong>Vector & SQL Provenance Engine</strong>: Displays generated SQL queries alongside FAISS/Cosine vector similarity scores and cryptographic CCTNS SHA-256 evidence hashes.</li>
+      <li><strong>Actionable Tactical Leads</strong>: Suggests concrete investigative next steps, including tower dump subpoenas, pawn shop checks, and court bail condition verifications.</li>
+    </ul>
+
+    <h3>🎥 2.2 Real-Time CCTV AI & ANPR Monitoring (src/components/CCTVMonitoringModule.jsx)</h3>
+    <ul>
+      <li><strong>Multi-Camera Stream Grid</strong>: Simulated live stream monitors across critical intersections (MG Road, Silk Board, Kempegowda Bus Station, Outer Ring Road).</li>
+      <li><strong>ANPR & Facial Recognition Alerts</strong>: Highlights high-risk vehicle license plate detections (KA-01-EQ-9921 Black Pulsar 220) and suspect facial matches (Ramesh @ Bullet with 94.8% confidence score).</li>
+      <li><strong>Stream Metrics & Health</strong>: Displays live bandwidth usage, active camera counts, AI inference latency (14ms), and uptime analytics.</li>
+    </ul>
+
+    <h3>🕸️ 2.3 Crime Network Knowledge Graph (src/components/NetworkGraphModule.jsx)</h3>
+    <ul>
+      <li><strong>Interactive Neo4j Graph Visualizer</strong>: Visual node-link mapping of criminal connections, linking habitual offenders, accomplices, FIRs, vehicles, and financial mule bank accounts.</li>
+      <li><strong>Node Filtering & Risk Metrics</strong>: Real-time filtering by node types (SUSPECT, FIR, MULE_BANK_ACC, VEHICLE) with embedded risk scores (Bullet Ramesh Risk Score: 92/100).</li>
+      <li><strong>Interactive Node Drawer</strong>: Clicking a node exposes suspect dossiers, associated cases, mule account details, and gang relationships.</li>
+    </ul>
+
+    <h3>🗺️ 2.4 Crime GIS Map & Spatial Hotspot Analytics (src/components/GISMapModule.jsx)</h3>
+    <ul>
+      <li><strong>Interactive Leaflet Mapping</strong>: Geospatial crime clustering across Karnataka police divisions (Indiranagar, Jayanagar, Whitefield, Mysuru, Hubballi).</li>
+      <li><strong>Hotspot Heatmaps & Forecasting</strong>: Visual indicators for crime density, patrol route suggestions, and festival surge forecasting (e.g., Mysuru Dasara burglary risk).</li>
+    </ul>
+
+    <h3>👤 2.5 Offender Profiling & Criminal Dossiers (src/components/OffenderProfileModule.jsx)</h3>
+    <ul>
+      <li><strong>Habitual Offender Intelligence</strong>: Deep dossiers for high-risk offenders (e.g., Ramesh @ Bullet Ramesh), tracking criminological risk scores, MO history, gang affiliations, and active court bail status at 1st ACMM Court.</li>
+    </ul>
+
+    <h3>📁 2.6 Investigator Workspace (src/components/InvestigatorWorkspaceModule.jsx)</h3>
+    <ul>
+      <li><strong>Digital Case Binder</strong>: Case management interface for Sub-Inspectors and Inspectors to assemble FIR details, organize witness statements, tag evidence SHA-256 hashes, and export comprehensive investigation briefs.</li>
+    </ul>
+
+    <h3>🔒 2.7 AI Governance & DPDP Audit (src/components/AuditGovernanceModule.jsx)</h3>
+    <ul>
+      <li><strong>DPDP Act 2023 Compliance</strong>: Full compliance dashboard tracking query logs, role access levels, prompt histories, data anonymization rules, and SHA-256 evidence integrity hashes.</li>
+    </ul>
+
+    <h2>3. Operational & Legal Scopes</h2>
+
+    <h3>Role-Based Access Control (RBAC) Matrix</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Role ID</th>
+          <th>Title / Rank</th>
+          <th>Access Level</th>
+          <th>Permissions & View Scopes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>INVESTIGATOR</code></td>
+          <td>Sub-Inspector / Inspector</td>
+          <td><strong>Level 1</strong></td>
+          <td>Local station FIR search, suspect interrogation notes, active case binder, PII masked</td>
+        </tr>
+        <tr>
+          <td><code>ANALYST</code></td>
+          <td>Crime Analyst</td>
+          <td><strong>Level 2</strong></td>
+          <td>Cross-station network graphs, MO pattern matching, trend analytics, PII masked</td>
+        </tr>
+        <tr>
+          <td><code>SUPERVISOR</code></td>
+          <td>Superintendent of Police (SP)</td>
+          <td><strong>Level 3</strong></td>
+          <td>District-wide GIS heatmaps, squad deployment, bail violation alerts, unmasked PII</td>
+        </tr>
+        <tr>
+          <td><code>POLICYMAKER</code></td>
+          <td>Joint Secretary (Home Dept)</td>
+          <td><strong>Level 4</strong></td>
+          <td>State-level crime metrics, policy recommendations, DPDP audit overview</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Legal & Protection Scope</h3>
+    <ul>
+      <li><strong>DPDP Act 2023 Compliance</strong>: Automatic masking of Personally Identifiable Information (PII) like Aadhaar numbers and exact residential addresses for Level 1 & Level 2 users.</li>
+      <li><strong>BNS Legal Mapping</strong>: Full alignment with Bharatiya Nyaya Sanhita (BNS) penal codes.</li>
+      <li><strong>Evidence Integrity</strong>: Immutable cryptographic SHA-256 hashing on all logs and evidence files.</li>
+    </ul>
+
+    <h2>4. Complete Technology Stack</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Layer</th>
+          <th>Technology</th>
+          <th>Version</th>
+          <th>Usage & Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Frontend UI</td>
+          <td>React</td>
+          <td><code>^19.2.7</code></td>
+          <td>Declarative component architecture & state management</td>
+        </tr>
+        <tr>
+          <td>Build Tool</td>
+          <td>Vite</td>
+          <td><code>^8.1.1</code></td>
+          <td>Lightning-fast dev server & production bundler</td>
+        </tr>
+        <tr>
+          <td>Styling</td>
+          <td>Tailwind CSS</td>
+          <td><code>^4.3.3</code></td>
+          <td>Utility-first responsive design framework</td>
+        </tr>
+        <tr>
+          <td>GIS Spatial Map</td>
+          <td>Leaflet</td>
+          <td><code>^1.9.4</code></td>
+          <td>Geospatial crime mapping & division hotspots</td>
+        </tr>
+        <tr>
+          <td>Analytics Charts</td>
+          <td>Recharts</td>
+          <td><code>^3.10.0</code></td>
+          <td>Interactive charts & trend visualization</td>
+        </tr>
+        <tr>
+          <td>Icons</td>
+          <td>Lucide React</td>
+          <td><code>^1.26.0</code></td>
+          <td>Vector UI icons</td>
+        </tr>
+        <tr>
+          <td>Code Quality</td>
+          <td>Oxlint</td>
+          <td><code>^1.71.0</code></td>
+          <td>High-speed static analysis linter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Project Directory & File Map</h2>
+    <pre><code>c:/Datathon Zoho/
+├── KSP_Drishti_AI_Complete_Documentation.doc  <-- Microsoft Word Downloadable Document
+├── IMPLEMENTATION_AND_SCOPE.md                <-- Markdown Document
+├── IMPLEMENTATION_AND_SCOPE.html              <-- Web / PDF Document
+├── README.md                                  <-- Overview & Setup
+├── package.json                              <-- Node Dependencies
+└── src/
+    ├── App.jsx                               <-- Main Container & Tab Router
+    ├── components/                           <-- 7 Core Modules & TopNavbar
+    └── data/mockData.js                      <-- Schemas & Preset Data</code></pre>
+
+  </div>
+</body>
+</html>
